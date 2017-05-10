@@ -4,6 +4,7 @@
         Title="ControlsWindow" Height="300" Width="300"
         xmlns:lrsitod="clr-namespace:LrsitodUI.Controls;assembly=LrsitodUI">
     <Grid>
+        
         <StackPanel Orientation="Vertical">
             <lrsitod:AutoCompleteBox/>
             <Button Content="hdssjkdk"/>
