@@ -1,0 +1,12 @@
+﻿<Window x:Class="LrsitodUI_Test.ControlsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ControlsWindow" Height="300" Width="300"
+        xmlns:lrsitod="clr-namespace:LrsitodUI.Controls;assembly=LrsitodUI">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <lrsitod:AutoCompleteBox/>
+            <Button Content="hdssjkdk"/>
+        </StackPanel>
+    </Grid>
+</Window>
