@@ -4,6 +4,7 @@
     xmlns:local="clr-namespace:LrsitodUI">
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/LrsitodUI;component/Converter/Converter.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/LrsitodUI;component/Themes/ControlsThemes/AutoCompleteBox_Theme.xaml"/>
         
     </ResourceDictionary.MergedDictionaries>

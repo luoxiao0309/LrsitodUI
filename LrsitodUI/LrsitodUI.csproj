@@ -63,6 +63,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Converter\Converter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\ControlsThemes\AutoCompleteBox_Theme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -74,8 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\AutoCompleteBox\AutoCompleteBox.cs" />
-    <Compile Include="Controls\AutoCompleteBox\ItemsSource.cs" />
+    <Compile Include="Controls\AutoCompleteBox\SourceProperty.cs" />
     <Compile Include="Controls\ExPopup.cs" />
+    <Compile Include="Converter\Converter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

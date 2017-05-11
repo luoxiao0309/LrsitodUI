@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LrsitodUI;
+using LrsitodUI.Controls;
 
 namespace LrsitodUI_Test
 {
@@ -22,6 +24,20 @@ namespace LrsitodUI_Test
         public ControlsWindow()
         {
             InitializeComponent();
+
+            compe.ItemsSource = Init();
+        }
+
+        public List<SourceProperty> Init()
+        {
+            List<SourceProperty> result = new List<SourceProperty>();
+            for (int i = 0; i < 10; i++)
+            {
+                SourceProperty sp = new SourceProperty();
+                sp.DisplayPath = i.ToString() + (i + 1).ToString();
+                result.Add(sp);
+            }
+            return result;
         }
     }
 }

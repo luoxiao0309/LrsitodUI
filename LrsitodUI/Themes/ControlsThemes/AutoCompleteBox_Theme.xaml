@@ -2,30 +2,57 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:LrsitodUI.Controls"
                     >
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/LrsitodUI;component/Converter/Converter.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
     <Style TargetType="{x:Type local:AutoCompleteBox}">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:AutoCompleteBox}">
                     <Grid >
-                        <TextBox Name="intext" Text="{Binding SelectText, RelativeSource={RelativeSource TemplatedParent}}"  Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"/>
-                        <Popup x:Name="pop" Placement="Bottom" StaysOpen="False" AllowsTransparency="True" PopupAnimation="Slide" PlacementTarget="{Binding ElementName=textBnt}">
-                            <Border Background="Red">
+                        <TextBox Name="intext" Text="{Binding SelectText, RelativeSource={RelativeSource TemplatedParent}}"  
+                                 Width="{TemplateBinding Width}" Height="{TemplateBinding Height}"
+                                 VerticalContentAlignment="Center"/>
+                        <Popup x:Name="pop" Placement="Bottom" StaysOpen="False" AllowsTransparency="True" PopupAnimation="Slide" PlacementTarget="{Binding ElementName=textBnt}"
+                               Width="{TemplateBinding Width}">
+                            <Border>
                                 <StackPanel Orientation="Vertical">
-                                    <Border>
+                                    <Border Name="notbr" Background="LightGray">
                                         <TextBlock Text="not found"/>
                                     </Border>
-                                    <Border>
-                                        <ListBox>
-                                            <ListBoxItem Content="1234"/>
-                                            <ListBoxItem Content="56827"/>
-                                            <ListBoxItem Content="90137"/>
-                                            <ListBoxItem Content="1123892"/>
+                                    <Border Name="foundbr" >
+                                        <ListBox Name="list" ItemsSource="{Binding ItemsSource, RelativeSource={RelativeSource TemplatedParent}}" 
+                                                 ItemTemplate="{Binding ItemTemplate}" ><!--DisplayMemberPath="{Binding DisplayMemberPath, RelativeSource={RelativeSource TemplatedParent}}"-->
+                                            <ListBox.ItemContainerStyle>
+                                                <Style TargetType="{x:Type ListBoxItem}">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsShow}" Value="false">
+                                                            <Setter Property="Height" Value="0"/>
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                        </DataTrigger>
+                                                        <Trigger Property="IsMouseOver" Value="true">
+                                                            <Setter Property="Background" Value="SkyBlue"/>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </ListBox.ItemContainerStyle>
                                         </ListBox>
                                     </Border>
                                 </StackPanel>
                             </Border>
                         </Popup>
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFound" Value="false">
+                            <Setter TargetName="foundbr" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="notbr" Property="Visibility" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsFound" Value="true">
+                            <Setter TargetName="foundbr" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="notbr" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

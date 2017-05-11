@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:me="clr-namespace:LrsitodUI">
+    <me:IntToStringSourceConverter x:Key="IntToStringConverter"/>
+    <me:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    <me:BoolToNVisibilityConverter x:Key="BoolToNVisibilityConverter"/>
+    <me:StringToImageSourceConverter x:Key="StringToImageSourceConverter"/>
+    <me:GroupBoxHeaderPahConverter x:Key="GroupBoxHeaderPahConverter"/>
+    <me:IntToIsCheckedConverter x:Key="IntToIsCheckedConverter"/>
+    <me:RadioButtonConverter x:Key="RadioButtonConverter"/>
+    <me:CountToVisibilityConverter x:Key="CountToVisibilityConverter"/>
+    <me:StringToColorConverter x:Key="StringToColorConverter"/>
+    <me:IntToVisibilityConverter x:Key="IntToVisibilityConverter"/>
+    <me:IntToNVisibilityConverter x:Key="IntToNVisibilityConverter"/>
+    <me:BoolToNBoolConverter x:Key="BoolToNBoolConverter"/>
+</ResourceDictionary>
